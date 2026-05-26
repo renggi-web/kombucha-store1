@@ -34,9 +34,7 @@
 
 </div>
 
-<!-- =========================
-     MODAL CHECKOUT (FORM)
-========================= -->
+<!-- CHECKOUT FORM -->
 <div class="payment-modal" id="checkoutFormModal">
 
     <div class="payment-content">
@@ -48,9 +46,7 @@
         <div class="customer-form">
 
             <input type="text" id="nama" placeholder="Nama Lengkap">
-
             <textarea id="alamat" placeholder="Alamat Lengkap"></textarea>
-
             <input type="tel" id="telepon" placeholder="Nomor WhatsApp">
 
         </div>
@@ -63,9 +59,7 @@
 
 </div>
 
-<!-- =========================
-     MODAL PEMBAYARAN
-========================= -->
+<!-- PAYMENT -->
 <div class="payment-modal" id="paymentModal">
 
     <div class="payment-content">
@@ -88,16 +82,13 @@
 
         </div>
 
-        <!-- QRIS -->
         <div id="qrisArea" class="payment-detail">
-            <h3>Scan QRIS</h3>
+            <h3>QRIS</h3>
             <img src="img/Qris.jpeg" class="payment-qris">
         </div>
 
-        <!-- BANK -->
         <div id="bankArea" class="payment-detail">
             <h3>Transfer Bank</h3>
-
             <div class="rekening-box">
                 <p><b>Bank BCA</b></p>
                 <h2>1234567890</h2>
@@ -105,7 +96,6 @@
             </div>
         </div>
 
-        <!-- WHATSAPP CHECKOUT (TETAP ASLI) -->
         <button class="checkout-btn wa-btn" onclick="checkoutWA()">
             Checkout WhatsApp
         </button>
@@ -113,14 +103,12 @@
     </div>
 </div>
 
-<!-- =========================
-     NAVBAR
-========================= -->
+<!-- NAVBAR -->
 <header>
     <nav class="navbar">
 
         <div class="logo">
-            <img src="img/logo.jpeg" alt="Logo">
+            <img src="img/logo.jpeg" alt="">
             <h2>KombuchaTeh</h2>
         </div>
 
@@ -133,23 +121,19 @@
     </nav>
 </header>
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 <section class="hero">
 
     <div class="hero-logo">
-        <img src="img/logo.jpeg" alt="Logo">
+        <img src="img/logo.jpeg">
     </div>
 
     <h1>KombuchaTeh</h1>
 
-    <div class="status">
-        <p>🟢 Toko Sedang Buka</p>
-    </div>
+    <div class="status">🟢 Toko Buka</div>
 
     <p class="deskripsi">
-        Nikmati kesegaran teh kombucha dengan manfaat:
+        Nikmati Kombucha sehat:
     </p>
 
     <div class="manfaat-list">
@@ -162,42 +146,31 @@
         </ul>
     </div>
 
-    <a href="#produk" class="btn-menu">Lihat Menu →</a>
-
 </section>
 
-<!-- =========================
-     PRODUK
-========================= -->
+<!-- PRODUK -->
 <section id="produk" class="produk-section">
 
-    <h2>Menu Kombucha</h2>
+    <h2>Menu</h2>
 
     <div class="produk-container">
 
         <div class="card">
-
-            <img src="img/teh.jpeg" alt="Produk">
-
+            <img src="img/teh.jpeg">
             <h3>Kombucha Original</h3>
-
-            <p>Kombucha segar 150ml</p>
-
+            <p>Segar 150ml</p>
             <span>Rp 15.000</span>
 
             <button onclick="tambahKeranjang('Kombucha Original',15000)">
                 + Keranjang
             </button>
-
         </div>
 
     </div>
 
 </section>
 
-<!-- =========================
-     KONTAK
-========================= -->
+<!-- KONTAK (KEMBALI ASLI) -->
 <footer id="kontak">
 
     <h2>Kontak Kami</h2>
@@ -205,21 +178,43 @@
     <div class="kontak-container">
 
         <div class="kontak-box">
-            <h3>Alamat</h3>
-            <p>Kupang, NTT</p>
+            <h3>📍 Alamat</h3>
+            <p>
+                Jl. RSS Oesapa Blok J No. 4 <br>
+                Kota Kupang, NTT
+            </p>
         </div>
 
         <div class="kontak-box">
-            <h3>Jam Buka</h3>
+            <h3>🕒 Jam Buka</h3>
             <p>09:00 - 17:00</p>
         </div>
 
         <div class="kontak-box">
-            <h3>WhatsApp</h3>
+            <h3>📞 Kontak</h3>
             <p>085182697923</p>
         </div>
 
     </div>
+
+    <div class="maps">
+
+    <h3>Lokasi Kami</h3>
+
+    <div id="map"></div>
+
+    <button class="checkout-btn" onclick="getLocation()">
+        📍 Tampilkan Lokasi Saya
+    </button>
+
+</div>
+
+<!-- GOOGLE MAPS API -->
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=API_KEY_KAMU&callback=initMap"
+    async
+    defer>
+</script>
 
 </footer>
 

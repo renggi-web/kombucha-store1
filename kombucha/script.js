@@ -31,7 +31,6 @@ function tambahKeranjang(nama, harga){
 function updateCart(){
 
     let cartItems = document.getElementById("cart-items");
-
     let totalHarga = 0;
 
     cartItems.innerHTML = "";
@@ -43,7 +42,6 @@ function updateCart(){
         cartItems.innerHTML += `
             <div class="cart-item">
                 <h4>${item.nama}</h4>
-
                 <p>Rp ${item.harga.toLocaleString("id-ID")}</p>
 
                 <div class="qty-control">
