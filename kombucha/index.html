@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<body>
+
 <!-- ICON KERANJANG -->
 <div class="cart-icon" onclick="toggleCart()">
-
     🛒 <span id="cart-count">0</span>
-
 </div>
 
 <!-- SIDEBAR KERANJANG -->
@@ -19,56 +19,39 @@
 
     <div class="cart-header">
         <h2>Keranjang</h2>
-
-        <span class="close-cart" onclick="toggleCart()">
-            ✖
-        </span>
+        <span class="close-cart" onclick="toggleCart()">✖</span>
     </div>
 
     <div id="cart-items"></div>
 
     <div class="cart-footer">
-
         <h3>Total: Rp <span id="cart-total">0</span></h3>
 
-        <!-- TOMBOL LANJUT -->
         <button class="checkout-btn" onclick="showCheckoutForm()">
             Checkout
         </button>
-
     </div>
 
 </div>
 
-<!-- MODAL FORM CHECKOUT -->
+<!-- =========================
+     MODAL CHECKOUT (FORM)
+========================= -->
 <div class="payment-modal" id="checkoutFormModal">
 
     <div class="payment-content">
 
-        <span class="close-payment" onclick="closeCheckoutForm()">
-            ✖
-        </span>
+        <span class="close-payment" onclick="closeCheckoutForm()">✖</span>
 
         <h2>Data Pengiriman</h2>
 
         <div class="customer-form">
 
-            <input 
-                type="text" 
-                id="nama"
-                placeholder="Nama Lengkap"
-            >
+            <input type="text" id="nama" placeholder="Nama Lengkap">
 
-            <textarea 
-                id="alamat"
-                placeholder="Alamat Lengkap"
-            ></textarea>
+            <textarea id="alamat" placeholder="Alamat Lengkap"></textarea>
 
-            <input 
-                type="tel" 
-                id="telepon"
-                placeholder="Nomor WhatsApp"
-            >
+            <input type="tel" id="telepon" placeholder="Nomor WhatsApp">
 
         </div>
 
@@ -80,286 +63,167 @@
 
 </div>
 
-<!-- CHECKOUT WA -->
-<button class="checkout-btn wa-btn" onclick="checkoutWA()">
-    Checkout WhatsApp
-</button>
-
-    </div>
-
-</div>
-
-<!-- MODAL PEMBAYARAN -->
+<!-- =========================
+     MODAL PEMBAYARAN
+========================= -->
 <div class="payment-modal" id="paymentModal">
 
     <div class="payment-content">
 
-        <span class="close-payment" onclick="tutupPembayaran()">
-            ✖
-        </span>
+        <span class="close-payment" onclick="tutupPembayaran()">✖</span>
 
         <h2>Pilih Metode Pembayaran</h2>
 
-        <!-- PILIHAN -->
         <div class="payment-methods">
 
-            <!-- QRIS -->
             <div class="payment-box" onclick="showQris()">
-
                 <h3>QRIS</h3>
-
                 <p>Bayar menggunakan QRIS</p>
-
             </div>
 
-            <!-- BANK -->
             <div class="payment-box" onclick="showBank()">
-
                 <h3>Transfer Bank</h3>
-
-                <p>Transfer melalui rekening bank</p>
-
+                <p>Transfer melalui rekening</p>
             </div>
 
         </div>
 
         <!-- QRIS -->
         <div id="qrisArea" class="payment-detail">
-
             <h3>Scan QRIS</h3>
-
             <img src="img/Qris.jpeg" class="payment-qris">
-
         </div>
 
         <!-- BANK -->
         <div id="bankArea" class="payment-detail">
-
             <h3>Transfer Bank</h3>
 
             <div class="rekening-box">
-
                 <p><b>Bank BCA</b></p>
-
                 <h2>1234567890</h2>
-
                 <p>A/N Kombucha Teh</p>
-
             </div>
-
         </div>
 
-    </div>
-
-</div>
-
-<body>
-
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-
-            <div class="logo">
-                <img src="img/logo.jpeg" alt="Logo">
-                <h2>KombuchaTeh</h2>
-            </div>
-
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#produk">Menu</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-                <li><a href="#">Admin</a></li>
-            </ul>
-
-        </nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-
-        <div class="hero-logo">
-            <img src="img/logo.jpeg" alt="Logo">
-        </div>
-
-        <h1>KombuchaTeh</h1>
-
-        <div class="status">
-            <p>🟢 Toko Sedang Buka</p>
-        </div>
-
-        <p class="deskripsi">
-            Nikmati kesegaran teh kombucha dengan berbagai Kandungan:
-            <div class="manfaat-list">
-                <ul>
-                    <li>Probiotik untuk pencernaan sehat</li>
-                    <li>Boost Imun</li>
-                    <li>Detoks Alami</li>
-                    <li>Rendah Gula</li>
-                    <li>Sehat dan Segar</li>
-                </ul>
-            </div>
-
-        </p>
-
-        <a href="#produk" class="btn-menu">
-            Lihat Menu →
-        </a>
-
-    </section>
-
-    <!-- PRODUK -->
-    <section id="produk" class="produk-section">
-
-        <h2>Menu Kombucha</h2>
-
-        <div class="produk-container">
-
-            <!-- PRODUK 1 -->
-            <div class="card">
-
-                <img src="img/teh.jpeg" alt="Kombucha">
-
-                <h3>Kombucha Original</h3>
-
-                <p>
-                    Kombucha original segar dan sehat.
-                    150 ml.
-                </p>
-
-                <span>Rp 15.000</span>
-
-                <button onclick="tambahKeranjang('Kombucha Original',15000)">
-                 + Keranjang
-                </button>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-    <!-- MODAL PEMBAYARAN -->
-<div class="modal" id="modalBayar">
-
-    <div class="modal-content">
-
-        <span class="close" onclick="tutupModal()">
-            &times;
-        </span>
-
-        <h2>Metode Pembayaran</h2>
-
-        <p id="namaProduk"></p>
-        <p id="hargaProduk"></p>
-
-        <!-- PILIH METODE -->
-        <div class="metode-container">
-
-            <!-- QRIS -->
-            <div class="metode-box">
-
-                <h3>QRIS</h3>
-
-                <img src="img/Qris.jpeg" class="qris" alt="QRIS">
-
-                <p>Scan QR untuk pembayaran</p>
-
-            </div>
-
-            <!-- BANK -->
-            <div class="metode-box">
-
-                <h3>Transfer Bank</h3>
-
-                <div class="bank-box">
-
-                    <p><b>Bank BCA</b></p>
-
-                    <p>No Rekening:</p>
-
-                    <h4>1234567890</h4>
-
-                    <p>A/N Kombucha Teh</p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <button class="btn-close" onclick="tutupModal()">
-            Selesai
+        <!-- WHATSAPP CHECKOUT (TETAP ASLI) -->
+        <button class="checkout-btn wa-btn" onclick="checkoutWA()">
+            Checkout WhatsApp
         </button>
 
     </div>
-
 </div>
 
-    <!-- KONTAK -->
+<!-- =========================
+     NAVBAR
+========================= -->
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="img/logo.jpeg" alt="Logo">
+            <h2>KombuchaTeh</h2>
+        </div>
+
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#produk">Menu</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+<section class="hero">
+
+    <div class="hero-logo">
+        <img src="img/logo.jpeg" alt="Logo">
+    </div>
+
+    <h1>KombuchaTeh</h1>
+
+    <div class="status">
+        <p>🟢 Toko Sedang Buka</p>
+    </div>
+
+    <p class="deskripsi">
+        Nikmati kesegaran teh kombucha dengan manfaat:
+    </p>
+
+    <div class="manfaat-list">
+        <ul>
+            <li>Probiotik untuk pencernaan sehat</li>
+            <li>Boost Imun</li>
+            <li>Detoks Alami</li>
+            <li>Rendah Gula</li>
+            <li>Sehat dan Segar</li>
+        </ul>
+    </div>
+
+    <a href="#produk" class="btn-menu">Lihat Menu →</a>
+
+</section>
+
+<!-- =========================
+     PRODUK
+========================= -->
+<section id="produk" class="produk-section">
+
+    <h2>Menu Kombucha</h2>
+
+    <div class="produk-container">
+
+        <div class="card">
+
+            <img src="img/teh.jpeg" alt="Produk">
+
+            <h3>Kombucha Original</h3>
+
+            <p>Kombucha segar 150ml</p>
+
+            <span>Rp 15.000</span>
+
+            <button onclick="tambahKeranjang('Kombucha Original',15000)">
+                + Keranjang
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     KONTAK
+========================= -->
 <footer id="kontak">
 
     <h2>Kontak Kami</h2>
 
     <div class="kontak-container">
 
-        <!-- ALAMAT -->
         <div class="kontak-box">
-
-            <h3>📍 Alamat</h3>
-
-            <p>
-                Jl. RSS Oesapa Blok. J No. 4 <br>
-                Kota Kupang, Nusa Tenggara Timur
-            </p>
-
+            <h3>Alamat</h3>
+            <p>Kupang, NTT</p>
         </div>
 
-        <!-- JAM BUKA -->
         <div class="kontak-box">
-
-            <h3>🕒 Jam Buka</h3>
-
-            <p>Senin - Sabtu</p>
-
-            <p>09:00 - 17:00 WITA</p>
-
+            <h3>Jam Buka</h3>
+            <p>09:00 - 17:00</p>
         </div>
 
-        <!-- KONTAK -->
         <div class="kontak-box">
-
-            <h3>📞 Kontak</h3>
-
-            <p>WhatsApp : 085182697923</p>
-
-            <p>Instagram : @purebucha</p>
-
+            <h3>WhatsApp</h3>
+            <p>085182697923</p>
         </div>
-
-    </div>
-
-    <!-- GOOGLE MAPS -->
-    <div class="maps">
-
-        <h3>Lokasi Kami</h3>
-
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126331.81223999908!2d123.5546076!3d-10.1771991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c56b1f5cb5aaaaa%3A0x3030bfbcaf7700!2sKupang%2C%20Kota%20Kupang%2C%20Nusa%20Tenggara%20Timur!5e0!3m2!1sid!2sid!4v1711111111111!5m2!1sid!2sid"
-            width="100%"
-            height="350"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-        </iframe>
 
     </div>
 
 </footer>
 
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
