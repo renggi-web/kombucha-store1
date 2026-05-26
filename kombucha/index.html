@@ -18,27 +18,67 @@
 <div class="cart-sidebar" id="cartSidebar">
 
     <div class="cart-header">
-
         <h2>Keranjang</h2>
 
-        <span onclick="toggleCart()" class="close-cart">
+        <span class="close-cart" onclick="toggleCart()">
             ✖
         </span>
-
     </div>
 
     <div id="cart-items"></div>
 
     <div class="cart-footer">
 
-        <h3 id="totalHarga">
-            Total : Rp 0
-        </h3>
+        <h3>Total: Rp <span id="cart-total">0</span></h3>
 
-        <!-- CHECKOUT BIASA -->
-<button class="checkout-btn" onclick="bukaPembayaran()">
-    Checkout
-</button>
+        <!-- TOMBOL LANJUT -->
+        <button class="checkout-btn" onclick="showCheckoutForm()">
+            Checkout
+        </button>
+
+    </div>
+
+</div>
+
+<!-- MODAL FORM CHECKOUT -->
+<div class="payment-modal" id="checkoutFormModal">
+
+    <div class="payment-content">
+
+        <span class="close-payment" onclick="closeCheckoutForm()">
+            ✖
+        </span>
+
+        <h2>Data Pengiriman</h2>
+
+        <div class="customer-form">
+
+            <input 
+                type="text" 
+                id="nama"
+                placeholder="Nama Lengkap"
+            >
+
+            <textarea 
+                id="alamat"
+                placeholder="Alamat Lengkap"
+            ></textarea>
+
+            <input 
+                type="tel" 
+                id="telepon"
+                placeholder="Nomor WhatsApp"
+            >
+
+        </div>
+
+        <button class="checkout-btn" onclick="lanjutPembayaran()">
+            Lanjut Pembayaran
+        </button>
+
+    </div>
+
+</div>
 
 <!-- CHECKOUT WA -->
 <button class="checkout-btn wa-btn" onclick="checkoutWA()">
